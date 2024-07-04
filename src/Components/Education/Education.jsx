@@ -43,7 +43,7 @@ const Education = () => {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
         >
-            <div id='education' className="container mx-auto px-6 relative">
+            <div id='education' className="container mx-auto px-6 relative mt-10">
                 {/* Background shape on the left side */}
                 <div className="bg-gradient-to-r from-gray-800 to-gray-900 absolute inset-0 z-0" style={{ clipPath: 'polygon(0 0, 0% 100%, 100% 100%)' }}></div>
                 

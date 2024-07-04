@@ -1,41 +1,36 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { DiCss3 } from 'react-icons/di'; // Import relevant icons from react-icons
 import { RiNextjsFill } from "react-icons/ri";
 import { FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJs, FaDatabase, FaGithub, FaPython, FaCuttlefish, FaServer } from 'react-icons/fa'; // Import relevant icons from react-icons/fa
 
-// Import the background image URL
-const backgroundImageUrl = 'https://i.ibb.co/BwdZC59/particles.jpg';
-
 const Skills = () => {
-    const [showAllSkills, setShowAllSkills] = useState(false);
-
     // Array of skill cards
     const skillCards = [
         {
             icon: <FaReact className="text-6xl text-blue-600 mb-4 mx-auto" />,
             title: 'React',
-            description: 'Building user interfaces'
+            description: 'Building user interfaces with React'
         },
         {
             icon: <FaDatabase className="text-6xl text-green-600 mb-4 mx-auto" />,
             title: 'MongoDB',
-            description: 'NoSQL database'
+            description: 'NoSQL database for modern applications'
         },
         {
             icon: <FaNodeJs className="text-6xl text-green-600 mb-4 mx-auto" />,
             title: 'Node.js',
-            description: 'Server-side JavaScript'
+            description: 'Server-side JavaScript runtime'
         },
         {
             icon: <FaHtml5 className="text-6xl text-orange-600 mb-4 mx-auto" />,
             title: 'HTML5',
-            description: 'Markup language for the web'
+            description: 'Markup language for creating web pages'
         },
         {
             icon: <FaCss3Alt className="text-6xl text-blue-600 mb-4 mx-auto" />,
             title: 'CSS3',
-            description: 'Styling language for the web'
+            description: 'Styling language for web development'
         },
         {
             icon: <FaJs className="text-6xl text-yellow-600 mb-4 mx-auto" />,
@@ -45,22 +40,22 @@ const Skills = () => {
         {
             icon: <DiCss3 className="text-6xl text-indigo-600 mb-4 mx-auto" />,
             title: 'Tailwind',
-            description: 'CSS framework'
+            description: 'Utility-first CSS framework'
         },
         {
             icon: <FaDatabase className="text-6xl text-yellow-600 mb-4 mx-auto" />,
             title: 'Firebase',
-            description: 'Backend-as-a-Service platform'
+            description: 'Cloud Firestore and Realtime Database'
         },
         {
             icon: <FaGithub className="text-6xl text-gray-700 mb-4 mx-auto" />,
             title: 'Git & GitHub',
-            description: 'Version control system'
+            description: 'Version control and collaboration platform'
         },
         {
             icon: <FaPython className="text-6xl text-green-600 mb-4 mx-auto" />,
             title: 'Django',
-            description: 'Python web framework'
+            description: 'High-level Python web framework'
         },
         {
             icon: <FaCuttlefish className="text-6xl text-blue-600 mb-4 mx-auto" />,
@@ -75,47 +70,35 @@ const Skills = () => {
         {
             icon: <FaServer className="text-6xl text-green-600 mb-4 mx-auto" />,
             title: 'Express.js',
-            description: 'Web application framework for Node.js'
+            description: 'Fast, unopinionated, minimalist web framework for Node.js'
         }
     ];
 
-    // Function to toggle showing all skills
-    const toggleShowAllSkills = () => {
-        setShowAllSkills(!showAllSkills);
-    };
-
     return (
-        <div className="flex flex-wrap justify-center" style={{ backgroundImage: `url(${backgroundImageUrl})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-            <div id="skills" className="skills-section pt-16 pb-20">
+        <div className="relative bg-gray-900">
+            <div id="skills" className="skills-section pt-16 pb-20 relative z-10">
                 <div className="max-w-6xl mx-auto px-4">
-                    <h1 className="text-4xl font-bold mb-8 text-center relative">
+                    <h1 className="text-4xl font-bold mb-8 text-center relative text-white">
                         <span className="text-transparent inline-block mb-10 bg-clip-text bg-gradient-to-r from-green-400 via-blue-500 to-purple-600">
                             Skills
                         </span>
                         <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-green-400 to-blue-500"></span>
                     </h1>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 my-10 gap-8">
-                        {/* Map through skillCards array and render only first 6 or all depending on showAllSkills */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                        {/* Map through skillCards array and render all cards */}
                         {skillCards.map((skill, index) => (
-                            <motion.div key={index} className={`block p-6 bg-gradient-to-r from-blue-100 to-indigo-100 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition duration-300 text-center ${showAllSkills || index < 6 ? 'block' : 'hidden'}`}
-                                whileHover={{ scale: 1.05 }}
+                            <motion.div key={index} className="p-6 bg-gray-800 rounded-xl shadow-lg text-center"
+                                whileHover={{ scale: 1.05, translateY: -10 }}
                                 initial={{ opacity: 0, y: 50 }}
                                 animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.3 }}
                             >
                                 {skill.icon}
-                                <h3 className="text-2xl font-semibold text-indigo-600">{skill.title}</h3>
-                                <p className="mt-4 text-lg">{skill.description}</p>
+                                <h3 className="text-2xl font-semibold text-indigo-400 mt-4">{skill.title}</h3>
+                                <p className="mt-2 text-lg text-white">{skill.description}</p>
                             </motion.div>
                         ))}
                     </div>
-                    {/* See more button */}
-                    {!showAllSkills && (
-                        <div className="flex justify-center mt-8">
-                            <button onClick={toggleShowAllSkills} className="bg-gradient-to-r from-green-500 to-green-400 text-white px-6 py-3 rounded-md shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105">
-                                See More
-                            </button>
-                        </div>
-                    )}
                 </div>
             </div>
         </div>
