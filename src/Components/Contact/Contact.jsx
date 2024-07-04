@@ -1,33 +1,26 @@
-import React, { useState } from 'react';
+import React, {  useRef }  from 'react';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        message: ''
-    });
+   
 
-    const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData(prevState => ({
-            ...prevState,
-            [name]: value
-        }));
-    };
+    const form = useRef();
 
-    const handleSubmit = (e) => {
+    const sendEmail = (e) => {
         e.preventDefault();
-        // Replace with your logic to handle form submission (e.g., send data to backend)
 
-        // For demonstration, log the form data
-        console.log(formData);
-
-        // Reset form fields after submission
-        setFormData({
-            name: '',
-            email: '',
-            message: ''
-        });
+        emailjs
+            .sendForm('service_2wfyvck', 'template_vdeuej8', form.current, {
+                publicKey: 'PD8qWXrOwS7NmB26F',
+            })
+            .then(
+                () => {
+                    console.log('SUCCESS!');
+                },
+                (error) => {
+                    console.log('FAILED...', error.text);
+                },
+            );
     };
 
     return (
@@ -41,18 +34,18 @@ const Contact = () => {
                     <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-green-400 to-blue-500"></span>
                 </h1>
                 <div className="max-w-lg mx-auto bg-gray-800 p-6 rounded-lg shadow-lg">
-                    <form onSubmit={handleSubmit}>
+                    <form ref={form} onSubmit={sendEmail}>
                         <div className="mb-4">
                             <label htmlFor="name" className="block text-white text-sm font-bold mb-2">Name</label>
-                            <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} className="w-full px-3 py-2 rounded bg-gray-700 focus:outline-none focus:bg-gray-900 text-white" required />
+                            <input type="text" id="name" name="name"className="w-full px-3 py-2 rounded bg-gray-700 focus:outline-none focus:bg-gray-900 text-white" required />
                         </div>
                         <div className="mb-4">
                             <label htmlFor="email" className="block text-white text-sm font-bold mb-2">Email</label>
-                            <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} className="w-full px-3 py-2 rounded bg-gray-700 focus:outline-none focus:bg-gray-900 text-white" required />
+                            <input type="email" id="email" name="email" className="w-full px-3 py-2 rounded bg-gray-700 focus:outline-none focus:bg-gray-900 text-white" required />
                         </div>
                         <div className="mb-6">
                             <label htmlFor="message" className="block text-white text-sm font-bold mb-2">Message</label>
-                            <textarea id="message" name="message" rows="4" value={formData.message} onChange={handleChange} className="w-full px-3 py-2 rounded bg-gray-700 focus:outline-none focus:bg-gray-900 text-white" required></textarea>
+                            <textarea id="message" name="message" rows="4" className="w-full px-3 py-2 rounded bg-gray-700 focus:outline-none focus:bg-gray-900 text-white" required></textarea>
                         </div>
                         <div className="flex justify-center">
                             <button type="submit" className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Submit</button>
