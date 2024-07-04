@@ -29,10 +29,10 @@ const AboutPage = () => {
                         transition={{ duration: 0.5, delay: 0.2 }}
                     >
                         <p className="text-lg mb-4">
-                            Hello! I'm Ridoy Mojumder, a junior Front-end Developer passionate about web development.
+                            Hello! I am Ridoy Mojumder, a junior Front-end Developer passionate about web development.
                         </p>
                         <p className="text-lg mb-4">
-                            Over the past year, I've focused on web development, with a deep interest in React and back-end technologies like Django. I'm currently pursuing a BSc in Engineering.
+                            Over the past year, I have focused on web development, with a deep interest in React and back-end technologies like Django. I am currently pursuing a BSc in Engineering.
                         </p>
                     </motion.div>
 

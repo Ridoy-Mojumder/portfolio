@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const Projects = () => {
     const projects = [
@@ -86,7 +87,13 @@ const Projects = () => {
                                 transition={{ duration: 0.5, delay: index * 0.2 }}
                             >
                                 <div className="relative mb-4">
-                                    <img src={project.profileImage} alt={project.name} className="rounded-lg shadow-lg" />
+                                    <Image
+                                        src={project.profileImage}
+                                        alt={project.name}
+                                        width={500} // Set appropriate width
+                                        height={300} // Set appropriate height
+                                        className="rounded-lg shadow-lg"
+                                    />
                                     <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300 bg-gradient-to-b from-transparent to-black rounded-lg">
                                         <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="text-white text-lg font-bold">View Live</a>
                                     </div>

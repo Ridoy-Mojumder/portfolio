@@ -20,7 +20,7 @@ const Education = () => {
             icon: <FaUniversity className="text-red-500 text-4xl mb-4" />,
             title: "BSc in CSE",
             institution: "Bangladesh University of Business and Technology, Mirpur-2, Dhaka, Bangladesh",
-            description: "Currently pursuing my Bachelor's degree in Computer Science and Engineering.",
+            description: "Currently pursuing my Bachelor degree in Computer Science and Engineering.",
         },
         {
             icon: <FaLaptopCode className="text-indigo-500 text-4xl mb-4" />,

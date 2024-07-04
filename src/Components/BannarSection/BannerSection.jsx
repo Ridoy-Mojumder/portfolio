@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 // Sample SVG icons (replace with actual SVG icons)
 const FacebookIcon = () => (
@@ -39,7 +40,7 @@ const BannerSection = () => {
                         transition={{ duration: 1 }}
                         className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 text-4xl md:text-6xl font-extrabold mb-4 text-center md:text-left"
                     >
-                        Hi, I'm Ridoy Mojumder
+                        Hi, I am Ridoy Mojumder
                     </motion.h1>
                     <motion.p
                         initial={{ y: 50, opacity: 0 }}
@@ -47,7 +48,7 @@ const BannerSection = () => {
                         transition={{ duration: 1, delay: 0.5 }}
                         className="text-gray-300 text-base md:text-lg mb-8 text-center md:text-left max-w-lg leading-relaxed"
                     >
-                        I'm a passionate front-end developer specializing in React, Next.js, and CSS frameworks, dedicated to creating intuitive and visually appealing web experiences.
+                        I am a passionate front-end developer specializing in React, Next.js, and CSS frameworks, dedicated to creating intuitive and visually appealing web experiences.
                     </motion.p>
 
                     {/* Hire Me Button */}
@@ -72,14 +73,21 @@ const BannerSection = () => {
                 </div>
                 {/* Right Column: Image */}
                 <div className="md:w-1/2 relative md:pl-8 flex justify-center items-center">
-                    <motion.img
+                    <motion.div
                         initial={{ x: 50, opacity: 0 }}
                         animate={{ x: 0, opacity: 1 }}
                         transition={{ duration: 1, delay: 0.5 }}
-                        src="https://i.ibb.co/h9DzbXz/DSC-1193-1-removebg-preview.png"
-                        alt="Banner Image"
                         className="w-full rounded-lg shadow-lg md:max-w-md"
-                    />
+                    >
+                        <Image
+                            src="https://i.ibb.co/h9DzbXz/DSC-1193-1-removebg-preview.png"
+                            alt="Banner Image"
+                            layout="responsive"
+                            width={500} // Set the appropriate width
+                            height={300} // Set the appropriate height
+                            className="rounded-lg shadow-lg"
+                        />
+                    </motion.div>
                 </div>
             </div>
         </div>
