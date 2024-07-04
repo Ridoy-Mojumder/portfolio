@@ -1,4 +1,5 @@
 import React from 'react';
+import { FiDownload } from 'react-icons/fi';
 
 const Navbar = () => {
     return (
@@ -119,22 +120,11 @@ const Navbar = () => {
                             rel="noopener noreferrer"
                             className="relative inline-block bg-gradient-to-r from-green-500 to-green-400 text-white px-6 py-3 rounded-md md:flex hidden shadow-lg overflow-hidden transition-transform duration-300 transform hover:scale-105"
                         >
-                            <span className="relative z-10">Download Resume</span>
-                            <span className="absolute inset-0 bg-gradient-to-r from-green-500 to-green-400 opacity-50 rounded-full transition-opacity duration-300 hover:opacity-75"></span>
-                            <span className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100">
-                                <svg
-                                    className="w-5 h-5 text-white animate-bounce"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 20 20"
-                                    fill="currentColor"
-                                >
-                                    <path
-                                        fillRule="evenodd"
-                                        d="M3.172 7.828a4 4 0 015.656-5.656l1.414 1.414a1 1 0 001.414 0l1.414-1.414a4 4 0 115.656 5.656L11.414 18.414a2 2 0 01-2.828 0L3.172 7.828z"
-                                        clipRule="evenodd"
-                                    />
-                                </svg>
+                            <span className="relative z-10 flex items-center">
+                                Download Resume{' '}
+                                <FiDownload className="ml-2 w-5 h-5" />
                             </span>
+                            <span className="absolute inset-0 bg-gradient-to-r from-green-500 to-green-400 opacity-50 rounded-full transition-opacity duration-300 hover:opacity-75"></span>
                         </a>
                     </li>
                 </ul>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { GoArrowUpRight } from "react-icons/go";
 
 // Sample SVG icons (replace with actual SVG icons)
 const FacebookIcon = () => (
@@ -23,6 +24,13 @@ const GitHubIcon = () => (
     <a href="https://github.com/Ridoy-Mojumder" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400 transform hover:scale-110 transition-transform">
         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
             <path d="M12 2c-5.52 0-10 4.48-10 10 0 4.42 2.87 8.17 6.84 9.49.5.09.68-.22.68-.49 0-.24-.01-.86-.01-1.69-2.78.61-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.52 1.04 1.52 1.04.89 1.51 2.34 1.07 2.91.82.09-.65.35-1.07.63-1.32-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.98 1.02-2.68-.1-.25-.44-1.27.1-2.64 0 0 .83-.27 2.73 1.03.79-.22 1.64-.33 2.48-.33s1.69.11 2.48.33c1.9-1.3 2.73-1.03 2.73-1.03.54 1.37.2 2.39.1 2.64.63.7 1.02 1.59 1.02 2.68 0 3.85-2.35 4.69-4.58 4.93.36.31.67.92.67 1.86 0 1.35-.01 2.43-.01 2.77 0 .27.18.59.69.49 3.97-1.33 6.84-5.07 6.84-9.49 0-5.52-4.48-10-10-10z" />
+        </svg>
+    </a>
+);
+const TwitterIcon = () => (
+    <a href="https://x.com/170Ridoy16533" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400 transform hover:scale-110 transition-transform">
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M23.953 4.569c-.885.385-1.83.641-2.825.755a4.993 4.993 0 002.165-2.723 9.966 9.966 0 01-3.127 1.184 4.928 4.928 0 00-8.453 4.482 13.978 13.978 0 01-10.16-5.145c-.375.646-.59 1.4-.59 2.203 0 1.519.775 2.858 1.953 3.642a4.935 4.935 0 01-2.231-.616c-.054 1.898 1.319 3.693 3.292 4.092-.571.155-1.171.237-1.785.237-.44 0-.871-.043-1.293-.123.872 2.719 3.397 4.7 6.396 4.754a9.898 9.898 0 01-6.1 2.101c-.398 0-.79-.023-1.174-.068 2.179 1.396 4.768 2.21 7.548 2.21 9.051 0 14.001-7.496 14.001-13.986 0-.21 0-.423-.015-.635.961-.694 1.797-1.562 2.457-2.549z" />
         </svg>
     </a>
 );
@@ -59,15 +67,16 @@ const BannerSection = () => {
                         className="flex justify-between items-center gap-6"
                     >
                         <motion.a
-                            href="#projects" // Replace with your actual section link
+                            href="#contact" // Replace with your actual section link
                             className="bg-green-500 text-white px-6 py-3 rounded-md shadow-lg hover:bg-green-400 transition duration-300 inline-block flex items-center"
                         >
-                            <span className="mr-2">Hire Me</span>
+                            <span className="mr-2 flex justify-between items-center gap-2">Hire Me <GoArrowUpRight /></span>
                         </motion.a>
                         <div className="flex justify-around gap-6">
                             <FacebookIcon />
                             <LinkedInIcon />
                             <GitHubIcon />
+                            <TwitterIcon />
                         </div>
                     </motion.div>
                 </div>
